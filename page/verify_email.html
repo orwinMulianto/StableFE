@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify Email — STABLE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/verify-email.css" />
+  </head>
+  <body>
+
+    <div class="bg-blur"></div>
+
+    <div class="card">
+      <div class="logo-wrap">
+        <img src="../Img/logo.png" alt="Logo" />
+      </div>
+
+      <h1>Verify your Email</h1>
+      <p class="subtitle">Please enter the 6 digit code that has been<br/>sent to your email</p>
+
+      <div class="otp-wrap" id="otpWrap">
+        <input class="otp-input" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+        <input class="otp-input" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+        <input class="otp-input" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+        <input class="otp-input" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+        <input class="otp-input" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+        <input class="otp-input" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" />
+      </div>
+
+      <p class="error-msg" id="errorMsg"></p>
+
+      <button class="btn-verify" id="verifyBtn">VERIFY EMAIL</button>
+
+      <p class="resend-text">
+        Didn't receive a code?
+        <button class="resend-btn" id="resendBtn">Resend</button>
+        <span id="resendTimer"></span>
+      </p>
+
+      <a href="../page/login.html" class="back-link">← Back to Login</a>
+    </div>
+
+    <script src="../js/verify-email.js"></script>
+  </body>
+</html>

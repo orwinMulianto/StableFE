@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STABLE - Personal Trainer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/trainer.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-area">
+            <img src="../asset/logo.png" alt="Logo" class="logo-img">
+            <span class="logo-text">STABLE</span>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-link">Home</a>
+            <a href="workout.html" class="nav-link">Workout</a>
+            <a href="trainer.html" class="nav-link active">Trainer</a>
+            <a href="profile.html" class="nav-link">Profile</a>
+        </div>
+        <div class="nav-actions">
+            <span class="user-greeting" id="userGreeting">Guest</span>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="page-header">
+            <h1>Personal Trainer</h1>
+            <p>Choose the perfect coaching package for your fitness journey</p>
+        </div>
+
+        <div class="packages-container">
+            <!-- Bronze Package -->
+            <div class="package-card bronze">
+                <div class="package-header">
+                    <div class="package-icon">🥉</div>
+                    <h2 class="package-title">Bronze</h2>
+                    <div class="package-price">Rp 500.000<span>/month</span></div>
+                </div>
+                <div class="package-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Basic workout plan</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Weekly check-in</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Chat support (8 hours)</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Nutrition guide PDF</span>
+                    </div>
+                </div>
+                <button class="subscribe-btn bronze-btn" data-tier="Bronze">Subscribe Now</button>
+            </div>
+
+            <!-- Silver Package (Recommended) -->
+            <div class="package-card silver recommended">
+                <div class="recommended-badge">⭐ RECOMMENDED</div>
+                <div class="package-header">
+                    <div class="package-icon">🥈</div>
+                    <h2 class="package-title">Silver</h2>
+                    <div class="package-price">Rp 1.000.000<span>/month</span></div>
+                </div>
+                <div class="package-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Intermediate workout plan</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Daily check-in</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Chat support (12 hours)</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Video call coaching (2x/month)</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Customized nutrition plan</span>
+                    </div>
+                </div>
+                <button class="subscribe-btn silver-btn" data-tier="Silver">Subscribe Now</button>
+            </div>
+
+            <!-- Gold Package -->
+            <div class="package-card gold">
+                <div class="package-header">
+                    <div class="package-icon">🥇</div>
+                    <h2 class="package-title">Gold</h2>
+                    <div class="package-price">Rp 2.000.000<span>/month</span></div>
+                </div>
+                <div class="package-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Advanced workout plan</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Unlimited chat support</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Weekly video call coaching</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Personalized meal plan</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Form analysis (video review)</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Priority support</span>
+                    </div>
+                </div>
+                <button class="subscribe-btn gold-btn" data-tier="Gold">Subscribe Now</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Checkout -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-container">
+            <div class="checkout-header">
+                <h3>Checkout</h3>
+                <button class="checkout-close" id="closeCheckoutBtn">&times;</button>
+            </div>
+            <div class="checkout-body">
+                <div class="package-summary" id="checkoutPackage">
+                    <!-- Akan diisi JS -->
+                </div>
+                <div class="payment-method">
+                    <h4>Payment Method</h4>
+                    <div class="payment-option">
+                        <input type="radio" name="payment" id="qris" checked>
+                        <label for="qris">
+                            <span class="payment-icon">📱</span>
+                            QRIS (Quick Response Code)
+                        </label>
+                    </div>
+                </div>
+                <div class="total-price">
+                    <span>Total</span>
+                    <span class="total-amount" id="totalAmount">Rp 0</span>
+                </div>
+            </div>
+            <div class="checkout-footer">
+                <button class="btn-cancel" id="cancelCheckoutBtn">Cancel</button>
+                <button class="btn-pay" id="payNowBtn">Pay Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="../asset/logo.png" alt="Logo" class="footer-logo-img">
+                    <span class="footer-logo-text">STABLE</span>
+                </div>
+                <p class="footer-tagline">System for Tracking And Behavioral Lifestyle Enhancement</p>
+                <p class="footer-copyright">© 2024 STABLE. All rights reserved.</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="workout.html">Workout Plans</a></li>
+                        <li><a href="trainer.html">Personal Trainer</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Stay consistent, stay strong</p>
+        </div>
+    </footer>
+
+    <script src="trainer.js"></script>
+</body>
+</html>

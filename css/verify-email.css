@@ -1,0 +1,219 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:       #0d1b2a;
+  --navy-card:  #111c2a;
+  --navy-light: #1e2e3e;
+  --border:     #2a3d52;
+  --accent:     #4a90d9;
+  --white:      #ffffff;
+  --muted:      #8899aa;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #0a1520;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background blur overlay */
+.bg-blur {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(74,144,217,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(80,200,120,0.06) 0%, transparent 60%);
+  z-index: 0;
+}
+
+/* Card */
+.card {
+  position: relative;
+  z-index: 1;
+  background: #0d1b2a;
+  border: 1px solid #1e3a52;
+  border-radius: 24px;
+  padding: 44px 40px 36px;
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo */
+.logo-wrap {
+  background: #fff;
+  border-radius: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.logo-wrap img {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+
+/* Title */
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* OTP Inputs */
+.otp-wrap {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.otp-input {
+  width: 52px;
+  height: 60px;
+  background: #1a2a38;
+  border: 1.5px solid #2a3d52;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Lexend Giga', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  caret-color: transparent;
+}
+
+.otp-input:focus {
+  border-color: #4a90d9;
+  background: #1e3044;
+}
+
+.otp-input.filled {
+  border-color: #4a90d9;
+}
+
+.otp-input.error {
+  border-color: #ff4d4d;
+  background: rgba(255,77,77,0.08);
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-4px); }
+  75%       { transform: translateX(4px); }
+}
+
+/* Error msg */
+.error-msg {
+  font-size: 0.78rem;
+  color: #ff4d4d;
+  min-height: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Verify button */
+.btn-verify {
+  width: 100%;
+  padding: 14px;
+  background: #e8edf2;
+  color: #0d1b2a;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-bottom: 20px;
+}
+
+.btn-verify:hover { background: #fff; }
+.btn-verify:active { transform: scale(0.98); }
+
+.btn-verify:disabled {
+  background: #2a3d52;
+  color: #8899aa;
+  cursor: not-allowed;
+}
+
+/* Resend */
+.resend-text {
+  font-size: 0.82rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.resend-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.resend-btn:hover { color: #60aaff; }
+
+.resend-btn:disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+#resendTimer {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* Back link */
+.back-link {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--white); }
+
+@media (max-width: 900px) {
+  .navbar { left: 16px; right: 16px; top: 12px; }
+  .hero-inner, .content { padding: 0 20px; }
+  .content-row { grid-template-columns: 1fr; }
+  .footer-container { grid-template-columns: 1fr; gap: 32px; }
+  .footer-links { grid-template-columns: repeat(2, 1fr); }
+}

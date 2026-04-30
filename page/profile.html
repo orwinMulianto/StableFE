@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STABLE - Profile</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/profile.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo-area">
+        <img src="../Img/logo.png" alt="Logo" class="logo-img" />
+        <span class="logo-text">STABLE</span>
+      </div>
+      <div class="nav-links">
+        <a href="dashboard.html" class="nav-link">Home</a>
+        <a href="workout.html" class="nav-link">Workout</a>
+        <a href="trainer.html" class="nav-link">Trainer</a>
+        <a href="profile.html" class="nav-link">Profile</a>
+      </div>
+      <div class="nav-actions">
+        <span class="user-greeting" id="userGreeting">Guest</span>
+      </div>
+    </nav>
+
+    <main class="content">
+      <div class="profile-container">
+        <div class="profile-header">
+          <div class="profile-avatar">
+            <img
+              src="../Img/defaultavatar.png"
+              alt="Profile"
+              id="profileImage"
+            />
+            <div class="avatar-edit" id="editAvatarBtn">✎</div>
+          </div>
+          <div class="profile-info">
+            <div class="profile-name">
+              <h2 id="profileName">—</h2>
+              <button class="edit-name-btn" id="editNameBtn">✎</button>
+            </div>
+            <p class="profile-email" id="profileEmail">—</p>
+            <span class="rank-badge rank-bronze" id="rankBadge">🥉 BRONZE</span>
+            <div class="profile-stats" style="margin-top: 14px">
+              <div class="stat-item">
+                <span class="stat-label">🔥 Streak</span>
+                <span class="stat-value" id="streakValue">0</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">🏆 Rank</span>
+                <span class="stat-value" id="rankValue">Bronze</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="section-title">Personal Details</p>
+        <div class="profile-details">
+          <div class="detail-card" data-field="gender">
+            <div class="detail-label">Gender</div>
+            <div class="detail-value empty" id="genderValue">Tap to fill</div>
+            <div class="detail-edit">✎</div>
+          </div>
+          <div class="detail-card" data-field="weight">
+            <div class="detail-label">Weight</div>
+            <div class="detail-value empty" id="weightValue">Tap to fill</div>
+            <div class="detail-edit">✎</div>
+          </div>
+          <div class="detail-card" data-field="height">
+            <div class="detail-label">Height</div>
+            <div class="detail-value empty" id="heightValue">Tap to fill</div>
+            <div class="detail-edit">✎</div>
+          </div>
+          <div class="detail-card" data-field="fitnessLevel">
+            <div class="detail-label">Fitness Level</div>
+            <div class="detail-value empty" id="fitnessValue">Tap to fill</div>
+            <div class="detail-edit">✎</div>
+          </div>
+          <div class="detail-card" data-field="mainGoal">
+            <div class="detail-label">Main Goal</div>
+            <div class="detail-value empty" id="goalValue">Tap to fill</div>
+            <div class="detail-edit">✎</div>
+          </div>
+          <div class="detail-card" data-field="workoutDays">
+            <div class="detail-label">Workout Days</div>
+            <div class="detail-value empty" id="workoutDaysValue">
+              Tap to fill
+            </div>
+            <div class="detail-edit">✎</div>
+          </div>
+        </div>
+        <div class="logout-section">
+          <button class="btn-logout" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+    </main>
+    <div class="edit-modal" id="editModal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h3 id="modalTitle">Edit</h3>
+          <button class="modal-close" id="closeModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div id="modalContent"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-cancel" id="cancelModalBtn">Cancel</button>
+          <button class="btn-save" id="saveModalBtn">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/profile.js"></script>
+  </body>
+</html>

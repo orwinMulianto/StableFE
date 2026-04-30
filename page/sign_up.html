@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Sign Up — STABLE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/sign_up.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+      <a href="../index.html" class="panel-logo">
+        <img src="../Img/logo.png" alt="Logo" />
+        <span>STABLE</span>
+      </a>
+      <div class="left-quote">
+        <p class="quote-text">
+          Every rep counts.<br />Every day matters.<br />
+          <span>Your best starts here.</span>
+        </p>
+        <p class="quote-sub">
+          Join thousands who've stopped making excuses<br />
+          and started building discipline with STABLE.
+        </p>
+      </div>
+
+      <div class="illustration-wrap" id="illus-wrap">
+        <img src="../Img/gojochibi.png" alt="Illustration" id="illus-img" />
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+      <div class="form-box">
+        <h1>Sign up for STABLE</h1>
+        <p class="subtitle">
+          Already have an account? <a href="#" id="open-login">Sign in</a>
+        </p>
+        <div class="divider"><span>or</span></div>
+
+        <form id="signupForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" id="firstName" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" id="lastName" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" required />
+          </div>
+
+          <div class="form-group">
+            <label>PASSWORD</label>
+            <div class="input-wrapper">
+              <input type="password" id="passwordInput" required />
+              <span id="togglePassword">
+                <i data-feather="eye-off"></i>
+              </span>
+            </div>
+          </div>
+
+          <button type="submit" id="signupBtn" class="btn-submit">
+            CREATE ACCOUNT
+          </button>
+        </form>
+
+        <p class="terms">
+          By signing up, you agree to our<br />
+          <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>.
+        </p>
+
+        <a href="../index.html" class="back-link">← Back</a>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal">
+        <!-- Logo -->
+        <div class="modal-logo">
+          <img src="../Img/logo.png" alt="Logo" />
+        </div>
+
+        <h2>Sign in to STABLE</h2>
+
+        <div class="form-group">
+          <label>EMAIL</label>
+          <input type="text" id="emailInput" />
+        </div>
+
+        <div class="form-group">
+          <label>PASSWORD</label>
+          <div class="input-wrapper">
+            <input type="password" id="loginPasswordInput" />
+            <span id="toggleLoginPassword">
+              <i data-feather="eye-off"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Remember me & Forgot Password -->
+        <div class="form-extras">
+          <label class="remember-me">
+            <input type="checkbox" id="rememberMe" />
+            Remember me
+          </label>
+          <a href="#" class="forgot">Forgot Password?</a>
+        </div>
+
+        <button class="btn-create" id="loginBtn">SIGN IN</button>
+
+        <div class="divider"><span>or</span></div>
+
+        <button class="google-btn" id="googleSignup">
+          <img
+            src="https://www.google.com/favicon.ico"
+            alt="Google"
+            width="20"
+          />
+          Continue with Google
+        </button>
+
+        <p class="signup-text">
+          New to STABLE? <a href="/page/sign_up.html">Create an account</a>
+        </p>
+        <a href="#" class="back-home" id="modal-close">← Back</a>
+      </div>
+    </div>
+    <script src="../js/sign_up.js"></script>
+  </body>
+</html>

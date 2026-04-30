@@ -1,0 +1,645 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #0000;
+  min-height: 2000px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 6%;
+  background-color: #242a2e;
+  backdrop-filter: blur(8px);
+
+  position: fixed;
+  top: 40px;
+  left: 79px;
+  right: 79px;
+
+  z-index: 9999;
+  border-radius: 30px;
+  animation: anime 1s ease forwards;
+}
+
+@keyframes anime {
+  from {
+    opacity: 0;
+    transform: translate(0, -40px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.navbar .navbar-logo {
+  display: flex;
+  font-size: medium;
+  font-weight: 650;
+  color: #fff;
+  font-style: italic;
+  gap: 10px;
+  align-items: center;
+}
+
+.navbar-logo img {
+  width: 20px;
+  height: 20px;
+}
+
+.navbar #navbar-menu a {
+  font-family: "Lexend Giga", sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 2.2rem;
+}
+
+.navbar #navbar-menu a:hover {
+  color: #ccd0cf;
+}
+
+.navbar #navbar-menu a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.15rem;
+  border-bottom: 0.5px solid #ccd0cf;
+  transform: scaleX(0);
+  transition: 0.15s ease-in-out;
+}
+
+.navbar #navbar-menu a:hover::after {
+  transform: scaleX(0.4);
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  background: url(../Img/LPOri.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    url(../Img/Garisdetak.png) center/contain no-repeat,
+    linear-gradient(to top, rgba(3, 16, 22, 1) 0%, rgba(3, 16, 22, 0) 20%);
+  z-index: 1;
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+  z-index: 2;
+  position: relative;
+}
+
+.hero .content h1 {
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 3.2rem;
+  background: linear-gradient(90deg, #ccd0cf, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 80%;
+  letter-spacing: 0.1rem;
+}
+
+.get-started {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  position: relative;
+  background: url(../Img/getstarted.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.get-started::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(3, 16, 22, 1) 0%, rgba(3, 16, 22, 0) 20%),
+    linear-gradient(to top, rgba(3, 16, 22, 1) 0%, rgba(3, 16, 22, 0) 20%),
+    rgba(0, 0, 0, 0.86);
+  z-index: 1;
+}
+
+.get-started .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 630px;
+  height: 380px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+  padding: 3rem 4rem;
+  border: 1px solid #fff;
+  z-index: 2;
+}
+
+.get-started .container h2 {
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 1.8rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: auto;
+  margin-top: -0.5rem;
+}
+
+.timer-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.timer-display .value {
+  background: linear-gradient(180deg, #ffffff 0%, #555555 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 8.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.get-started .container .btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background-color: #fff;
+  color: #000;
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  font-weight: bold;
+}
+
+.get-started .container .quote {
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 0.5rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: auto;
+  margin-top: -0.5rem;
+}
+
+.get-started .container .quote span {
+  color: red;
+}
+
+.rank {
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* ← susun vertikal */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* ← jarak antara gambar dan teks */
+  padding-top: 5rem;
+  position: relative;
+  background: url(../Img/rankpage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: visible;
+  z-index: 0;
+}
+
+.rank::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(3, 16, 22, 1) 0%, rgba(3, 16, 22, 0) 20%),
+    linear-gradient(to top, rgba(3, 16, 22, 1) 0%, rgba(3, 16, 22, 0) 20%),
+    rgba(0, 0, 0, 0.86);
+  z-index: 1;
+}
+
+.rank .rankdisplay {
+  position: absolute; /* ← bebas dari flow normal */
+  width: 850px;
+  height: 700px;
+  z-index: 2;
+  background: url(../Img/rank.png) center/contain no-repeat;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rank h3 {
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  background: linear-gradient(90deg, #ccd0cf, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-align: center;
+  z-index: 3;
+  position: absolute;
+  bottom: 6.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: #080f18;
+  border-top: 1px solid #2a3d52;
+  padding: 48px 0 0;
+  color: #ffffff;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 40px;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 60px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.footer-logo-img {
+  width: 28px;
+  height: 28px;
+}
+
+.footer-logo-text {
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #ffffff;
+}
+
+.footer-tagline {
+  color: #8899aa;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.footer-copyright {
+  color: #445566;
+  font-size: 0.75rem;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.footer-column h4 {
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #8899aa;
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-column ul li a:hover {
+  color: #ffffff;
+}
+
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background: #0d1b2a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 24px 28px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(30px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0);
+}
+
+/* Logo */
+.modal-logo {
+  background: #fff;
+  border-radius: 16px;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.modal-logo img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+/* Title */
+.modal h2 {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Form Row (2 kolom) */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.form-group label {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-group input {
+  background: #1e2e3e;
+  border: 1.5px solid #2a3d52;
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #4a90d9;
+}
+
+/* Create Account Button */
+.btn-create {
+  width: 100%;
+  padding: 12px;
+  background: #e8edf2;
+  color: #0d1b2a;
+  border: none;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 2px;
+  transition: background 0.2s;
+}
+
+.btn-create:hover {
+  background: #fff;
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  color: #556;
+  font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #2a3d52;
+}
+
+/* Google Button */
+.btn-google {
+  width: 100%;
+  padding: 11px;
+  background: #1e2e3e;
+  border: 1.5px solid #2a3d52;
+  border-radius: 12px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.btn-google:hover {
+  border-color: #4a90d9;
+}
+
+.signup-text {
+  color: #8899aa;
+  font-size: 0.85rem;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.signup-text a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-home {
+  color: #8899aa;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-home:hover {
+  color: #fff;
+}
+
+.form-extras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #8899aa;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+  accent-color: #4a90d9;
+  width: 14px;
+  height: 14px;
+}
+
+.forgot {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding-right: 36px;
+  box-sizing: border-box;
+}
+
+.input-wrapper #togglePassword {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.input-wrapper #togglePassword:hover {
+  color: #fff;
+}
+
+.input-wrapper #togglePassword svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.5;
+}
+
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.input-wrapper input:-webkit-autofill,
+.input-wrapper input:-webkit-autofill:hover,
+.input-wrapper input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #1e2e3e inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: #4a90d9 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+@media (max-width: 900px) {
+  .navbar { left: 16px; right: 16px; top: 12px; }
+  .hero-inner, .content { padding: 0 20px; }
+  .content-row { grid-template-columns: 1fr; }
+  .footer-container { grid-template-columns: 1fr; gap: 32px; }
+  .footer-links { grid-template-columns: repeat(2, 1fr); }
+}

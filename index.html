@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stable -- Daily Workout</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icon -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Style -->
+    <link rel="stylesheet" href="css/landpage.css" />
+  </head>
+  <body>
+    <!-- Navbar start -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">
+        <img src="Img/logo.png" alt="Logo" />
+        <i>STABLE</i>
+      </a>
+      <div id="navbar-menu">
+        <a href="#">Home</a>
+        <a href="../page/sign_up.html">Sign Up</a>
+        <a href="#" id="open-login">Log in</a>
+      </div>
+    </nav>
+    <section id="#" class="hero">
+      <main class="content">
+        <h1>FORGE DISCIPLINE<br />BUILD CONSISTENCY</h1>
+      </main>
+    </section>
+
+    <!-- Get Started Section -->
+    <section class="get-started">
+      <div class="container">
+        <h2>READY TO DOMINATE?</h2>
+        <q class="quote"
+          >The clock is ticking, and mediocrity is always
+          <span>hunting</span> you.</q
+        >
+        <div class="timer-display">
+          <span class="value" id="time">00:00</span>
+        </div>
+        <a href="#" class="btn" id="open-login">
+          <i data-feather="play-circle"></i>
+          START WORKOUT</a
+        >
+      </div>
+    </section>
+
+    <!-- Rank -->
+    <section class="rank">
+      <div class="rankdisplay"></div>
+      <h3>HIT YOUR STRIKES AND REACH THE TOP RANK</h3>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../Img/logo.png" alt="Logo" class="footer-logo-img" />
+            <span class="footer-logo-text">STABLE</span>
+          </div>
+          <p class="footer-tagline">
+            System for Tracking And Behavioral Lifestyle Enhancement
+          </p>
+          <p class="footer-copyright">© 2026 STABLE. All rights reserved.</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Features</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="workout.html">Workout Plans</a></li>
+              <li><a href="trainer.html">Personal Trainer</a></li>
+              <li><a href="profile.html">Profile</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">YouTube</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+    <script src="js/landpage.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal">
+        <!-- Logo -->
+        <div class="modal-logo">
+          <img src="Img/logo.png" alt="Logo" />
+        </div>
+
+        <h2>Sign in to STABLE</h2>
+
+        <div class="form-group">
+          <label>EMAIL</label>
+          <input type="text" id="emailInput" />
+        </div>
+
+        <div class="form-group">
+          <label>PASSWORD</label>
+          <div class="input-wrapper">
+            <input type="password" id="loginPasswordInput" />
+            <span id="togglePassword">
+              <i data-feather="eye-off"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Remember me & Forgot Password -->
+        <div class="form-extras">
+          <label class="remember-me">
+            <input type="checkbox" id="rememberMe" />
+            Remember me
+          </label>
+          <a href="#" class="forgot">Forgot Password?</a>
+        </div>
+
+        <button class="btn-create" id="loginBtn">SIGN IN</button>
+
+        <div class="divider"><span>or</span></div>
+
+        <button class="btn-google" id="btn-google">
+          <img
+            src="https://www.google.com/favicon.ico"
+            alt="Google"
+            width="20"
+          />
+          Continue with Google
+        </button>
+
+        <p class="signup-text">
+          New to STABLE? <a href="/page/sign_up.html">Create an account</a>
+        </p>
+        <a href="#" class="back-home" id="modal-close">← Back</a>
+      </div>
+    </div>
+  </body>
+</html>

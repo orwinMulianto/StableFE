@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - STABLE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo-area">
+        <img src="../Img/logo.png" alt="Logo" class="logo-img" />
+        <span class="logo-text">STABLE</span>
+      </div>
+      <div class="nav-links">
+        <a href="dashboard.html" class="nav-link">Home</a>
+        <a href="workout.html" class="nav-link">Workout</a>
+        <a href="trainer.html" class="nav-link">Trainer</a>
+        <a href="profile.html" class="nav-link">Profile</a>
+      </div>
+      <div class="nav-actions">
+        <div class="nav-actions">
+          <span class="user-greeting" id="userGreeting">Guest</span>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="user-welcome">
+          <div class="welcome-text">
+            <p class="welcome-label" id="greetingLabel">Good Morning ☀️</p>
+            <h2 id="welcomeName">Hello, Guest</h2>
+            <p class="welcome-sub">Have a productive workout day!</p>
+          </div>
+          <div class="streak-badge">
+            <span class="streak-icon">🔥</span>
+            <span id="streakValue">0</span>
+            <span class="streak-label">day streak</span>
+          </div>
+        </div>
+        <div class="calendar-wrap">
+          <button class="cal-arrow" id="calPrev">
+            <i data-feather="chevron-left"></i>
+          </button>
+          <div class="calendar-strip">
+            <div class="calendar-dates" id="calendarDates"></div>
+          </div>
+          <button class="cal-arrow" id="calNext">
+            <i data-feather="chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <main class="content">
+      <div class="content-row">
+        <div class="card card--activity">
+          <div class="card-header">
+            <h3 class="section-title">Today's Activity</h3>
+            <span class="selected-date-label" id="selectedDateLabel"></span>
+          </div>
+          <div class="activity-filter">
+            <div class="filter-chip active" data-muscle="Perut">Perut</div>
+            <div class="filter-chip" data-muscle="Lengan">Lengan</div>
+            <div class="filter-chip" data-muscle="Dada">Dada</div>
+            <div class="filter-chip" data-muscle="Kaki">Kaki</div>
+            <div class="filter-chip" data-muscle="Bahu">Bahu & Punggung</div>
+          </div>
+          <div class="exercise-list" id="exerciseList"></div>
+          <div class="progress-wrap">
+            <div class="progress-info">
+              <span id="progressText">0 / 0 selesai</span>
+              <span id="progressPct">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card--timer">
+          <div class="timer-mode-toggle">
+            <button class="mode-btn active" id="modeWorkout">Workout</button>
+            <button class="mode-btn" id="modeRest">Rest</button>
+          </div>
+          <div class="timer-mode-label" id="timerModeLabel">WORKOUT TIMER</div>
+          <div class="timer-display" id="timerDisplay">00:00</div>
+          <div class="timer-presets" id="timerPresets"></div>
+          <div class="timer-controls">
+            <button class="timer-btn timer-btn--main" id="startTimerBtn">
+              ▶ START
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="section-title">Tantangan Harian</h3>
+        </div>
+        <div class="card-body">
+          <div class="challenge-list" id="dailyChallenge">
+            <p class="empty-text">Belum ada tantangan hari ini.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../Img/logo.png" alt="Logo" class="footer-logo-img" />
+            <span class="footer-logo-text">STABLE</span>
+          </div>
+          <p class="footer-tagline">
+            System for Tracking And Behavioral Lifestyle Enhancement
+          </p>
+          <p class="footer-copyright">© 2025 STABLE. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Features</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="workout.html">Workout Plans</a></li>
+              <li><a href="trainer.html">Personal Trainer</a></li>
+              <li><a href="profile.html">Profile</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">YouTube</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Stay consistent, stay strong</p>
+      </div>
+    </footer>
+
+    <script src="../js/home.js"></script>
+    <script>
+      window.addEventListener("load", () => feather.replace());
+    </script>
+  </body>
+</html>
