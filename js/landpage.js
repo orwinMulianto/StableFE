@@ -1,3 +1,5 @@
+const BASE_URL = "http://localhost:8080/api/v1";
+
 const { createTimer } = anime;
 
 // ── TIMER ──
@@ -28,12 +30,9 @@ document.addEventListener(
   { passive: false },
 );
 
-// ── SEMUA LOGIC DI SATU DOMContentLoaded ──
 document.addEventListener("DOMContentLoaded", () => {
-  // Feather icons
   feather.replace();
 
-  // Token dari Google OAuth callback
   const params = new URLSearchParams(window.location.search);
   const token = params.get("token");
   if (token) {
@@ -43,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Modal
   const overlay = document.getElementById("modal-overlay");
   const closeBtn = document.getElementById("modal-close");
 
@@ -63,20 +61,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === overlay) overlay.classList.remove("active");
   });
 
-  // Google login
   const googleBtn = document.getElementById("btn-google");
   googleBtn?.addEventListener("click", (e) => {
     e.preventDefault();
-    window.location.href = "http://localhost:8080/api/v1/auth/google/login";
+    window.location.href = `${BASE_URL}/auth/google/login`;
   });
 
-  // Toggle password
   const togglePassword = document.getElementById("togglePassword");
-  const passwordInput = document.getElementById("passwordInput");
-  if (togglePassword && passwordInput) {
+  const loginPassInput = document.getElementById("loginPasswordInput");
+  if (togglePassword && loginPassInput) {
     togglePassword.addEventListener("click", () => {
-      const isHidden = passwordInput.type === "password";
-      passwordInput.type = isHidden ? "text" : "password";
+      const isHidden = loginPassInput.type === "password";
+      loginPassInput.type = isHidden ? "text" : "password";
       togglePassword.innerHTML = isHidden
         ? `<i data-feather="eye"></i>`
         : `<i data-feather="eye-off"></i>`;
@@ -84,9 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Login
+  // ── LOGIN ──
   const loginBtn = document.getElementById("loginBtn");
-  console.log("loginBtn:", loginBtn); // ← cek apakah null
+  console.log("loginBtn:", loginBtn);
 
   if (loginBtn) {
     const errorEl = document.createElement("p");
@@ -96,11 +92,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginBtn.addEventListener("click", async () => {
       const emailInput = document.getElementById("emailInput");
-      const passwordInput = document.getElementById("passwordInput");
+      const passInput = document.getElementById("loginPasswordInput");
       const rememberMe = document.getElementById("rememberMe");
 
       const email = emailInput?.value.trim() ?? "";
-      const password = passwordInput?.value ?? "";
+      const password = passInput?.value ?? "";
       const remember = rememberMe?.checked ?? false;
 
       errorEl.textContent = "";
@@ -114,24 +110,29 @@ document.addEventListener("DOMContentLoaded", () => {
       loginBtn.textContent = "SIGNING IN...";
 
       try {
-        const res = await fetch("http://localhost:8080/api/v1/auth/login", {
+        const res = await fetch(`${BASE_URL}/auth/login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
         });
 
         const data = await res.json();
+        const error = data.error || "";
         console.log("FULL RESPONSE:", data);
         console.log("TOKEN:", data?.data?.token);
 
         if (!res.ok) {
-          const msg = data.message || data.error || "";
+          const msg = data.message || "";
+          const error = data.error || "";
+
           if (
+            error.includes("belum diverifikasi") ||
+            error.includes("not verified") ||
             msg.includes("belum diverifikasi") ||
             msg.includes("not verified")
           ) {
             localStorage.setItem("pending_email", email);
-            window.location.href = "../page/verify-email.html";
+            window.location.href = "../page/verify_email.html";
             return;
           }
           errorEl.textContent = msg || "Login gagal.";
@@ -141,13 +142,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const savedToken = data.data?.token;
-        if (remember) {
-          localStorage.setItem("token", savedToken);
-        } else {
-          sessionStorage.setItem("token", savedToken);
+        const user = data.data?.user;
+
+        if (savedToken) {
+          if (remember) {
+            localStorage.setItem("token", savedToken);
+          } else {
+            sessionStorage.setItem("token", savedToken);
+          }
         }
 
-        window.location.href = "../page/dashboard.html";
+        const role = user?.role || user?.Role || "";
+        if (role === "TRAINER") {
+          window.location.href = "../page/trainer-dashboard.html";
+        } else {
+          window.location.href = "../page/dashboard.html";
+        }
       } catch (err) {
         console.error(err);
         errorEl.textContent = "Server error. Coba lagi.";
@@ -155,22 +165,5 @@ document.addEventListener("DOMContentLoaded", () => {
         loginBtn.textContent = "SIGN IN";
       }
     });
-  }
-  const savedToken = data.data?.token;
-  const user = data.data?.user;
-
-  if (savedToken) {
-    if (remember) {
-      localStorage.setItem("token", savedToken);
-    } else {
-      sessionStorage.setItem("token", savedToken);
-    }
-  }
-
-  const role = user?.role || user?.Role || "";
-  if (role === "TRAINER") {
-    window.location.href = "../page/trainer-dashboard.html";
-  } else {
-    window.location.href = "../page/dashboard.html";
   }
 });

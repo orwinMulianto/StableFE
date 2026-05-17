@@ -288,7 +288,7 @@ body {
 .footer {
   background: #080f18;
   border-top: 1px solid #2a3d52;
-  padding: 48px 0 0;
+  padding: 40px 0;
   color: #ffffff;
 }
 
@@ -332,38 +332,66 @@ body {
   color: #445566;
   font-size: 0.75rem;
 }
-
-.footer-links {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-.footer-column h4 {
-  font-family: "Lexend Giga", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 1px;
-  margin-bottom: 16px;
+.footer-right .social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.footer-column ul {
-  list-style: none;
-}
-
-.footer-column ul li {
-  margin-bottom: 10px;
-}
-
-.footer-column ul li a {
+.footer-right .social a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #445566;
+  border-radius: 50%;
   color: #8899aa;
-  font-size: 0.82rem;
+  font-size: 1rem;
+  opacity: 0.8;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.footer-right .social a svg {
+  width: 20px;
+  height: 20px;
+  stroke: #8899aa;
+  transition: stroke 0.2s;
+}
+
+.footer-right .social a:hover {
+  border-color: #8899aa;
+  opacity: 1;
+}
+
+.footer-right .social a:hover svg {
+  stroke: #ffffff;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+}
+
+.footer-nav a {
+  color: #8899aa;
+  font-size: 0.85rem;
+  font-weight: 500;
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.footer-column ul li a:hover {
+.footer-nav a:hover {
   color: #ffffff;
 }
 
