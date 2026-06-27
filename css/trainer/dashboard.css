@@ -271,6 +271,18 @@ a { text-decoration: none; color: inherit; }
   transition: border-color 0.2s;
 }
 
+.stat-card-icon {
+  display: grid;
+  place-items: center;
+}
+
+.stat-card-icon svg {
+  width: 28px;
+  height: 28px;
+  color: #4a90d9;
+  stroke-width: 2;
+}
+
 .stat-card:hover { border-color: rgba(74,144,217,0.3); }
 
 .stat-card-icon { font-size: 1.5rem; }

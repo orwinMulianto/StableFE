@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trainer Dashboard - STABLE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../css/navbar.css" />
+    <link rel="stylesheet" href="../../css/trainer/dashboard.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <nav class="navbar" id="mainNavbar">
+      <a href="#" class="navbar-logo" id="navbarLogo">
+        <img src="" alt="Logo STABLE" id="navbarLogoImage" />
+        <i>STABLE</i>
+      </a>
+
+      <div id="navbar-menu"></div>
+      <div class="nav-actions"></div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <p class="welcome-label" id="greetingLabel">Loading</p>
+          <h2 id="welcomeName">Memuat data trainer...</h2>
+          <p class="welcome-sub">Manage your clients and grow your practice.</p>
+        </div>
+      </div>
+    </section>
+
+    <main class="content">
+      <div class="content-row">
+        <div class="card card--profile">
+          <div class="card-header">
+            <h3 class="section-title">My Profile</h3>
+            <a
+              href="trainer-profile.html"
+              class="btn-edit-profile"
+              id="editProfileBtn"
+            >
+              <i data-feather="user"></i>
+              Profile
+            </a>
+          </div>
+
+          <div class="card-body profile-body">
+            <div class="profile-avatar-wrap">
+              <img
+                src="../../Img/defaultavatar.png"
+                alt="Avatar"
+                id="trainerAvatar"
+                class="trainer-avatar"
+              />
+            </div>
+
+            <div class="profile-details-list">
+              <div class="profile-detail-item">
+                <span class="pd-label">SPESIALISASI</span>
+                <span class="pd-value" id="trainerSpec">-</span>
+              </div>
+              <div class="profile-detail-item">
+                <span class="pd-label">PENGALAMAN</span>
+                <span class="pd-value" id="trainerExp">-</span>
+              </div>
+              <div class="profile-detail-item">
+                <span class="pd-label">BIO</span>
+                <span class="pd-value" id="trainerBio">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card--clients">
+          <div class="card-header">
+            <h3 class="section-title">Recent Clients</h3>
+            <a href="trainer-clients.html" class="btn-see-all">See All -></a>
+          </div>
+          <div class="client-list" id="clientList">
+            <p class="empty-text">Belum ada klien.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-card-icon">
+            <i data-feather="dollar-sign"></i>
+          </div>
+          <div class="stat-card-info">
+            <span class="stat-card-label">Total Revenue</span>
+            <span class="stat-card-value" id="statRevenue">Rp 0</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card-icon">
+            <i data-feather="users"></i>
+          </div>
+          <div class="stat-card-info">
+            <span class="stat-card-label">Total Clients</span>
+            <span class="stat-card-value" id="statClients">0</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card-icon">
+            <i data-feather="award"></i>
+          </div>
+          <div class="stat-card-info">
+            <span class="stat-card-label">Spesialisasi</span>
+            <span class="stat-card-value" id="statSpec">-</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card-icon">
+            <i data-feather="star"></i>
+          </div>
+          <div class="stat-card-info">
+            <span class="stat-card-label">Rating</span>
+            <span class="stat-card-value" id="statRating">0.0</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../../js/navbar.js?v=4"></script>
+    <script src="../../js/trainer/trainer-dashboard.js?v=4"></script>
+    <script>
+      window.addEventListener("load", () => {
+        if (window.feather) feather.replace();
+      });
+    </script>
+  </body>
+</html>

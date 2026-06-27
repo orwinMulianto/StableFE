@@ -15,22 +15,19 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Style -->
     <link rel="stylesheet" href="css/landpage.css" />
+    <link rel="stylesheet" href="css/login-modal.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
   </head>
   <body>
     <!-- Navbar start -->
-    <nav class="navbar">
-      <a href="#" class="navbar-logo">
-        <img src="Img/logo.png" alt="Logo" />
+    <nav class="navbar" id="mainNavbar">
+      <a href="#" class="navbar-logo" id="navbarLogo">
+        <img src="" alt="Logo STABLE" id="navbarLogoImage" />
         <i>STABLE</i>
       </a>
-      <div id="navbar-menu">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Membership</a>
-        <a href="#">Personal Trainer</a>
-        <a href="../page/sign_up.html">Sign Up</a>
-        <a href="#" id="open-login">Log in</a>
-      </div>
+
+      <div id="navbar-menu"></div>
+      <div class="nav-actions"></div>
     </nav>
     <section id="#" class="hero">
       <main class="content">
@@ -85,67 +82,17 @@
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Membership</a>
-            <a href="#">Personal Trainer</a>
+            <a href="#">Trainer</a>
           </div>
         </div>
       </div>
     </footer>
-    <div class="modal-overlay" id="modal-overlay">
-      <div class="modal">
-        <!-- Logo -->
-        <div class="modal-logo">
-          <img src="Img/logo.png" alt="Logo" />
-        </div>
-
-        <h2>Sign in to STABLE</h2>
-
-        <div class="form-group">
-          <label>EMAIL</label>
-          <input type="text" id="emailInput" />
-        </div>
-
-        <div class="form-group">
-          <label>PASSWORD</label>
-          <div class="input-wrapper">
-            <input type="password" id="loginPasswordInput" />
-            <span id="togglePassword">
-              <i data-feather="eye-off"></i>
-            </span>
-          </div>
-        </div>
-
-        <!-- Remember me & Forgot Password -->
-        <div class="form-extras">
-          <label class="remember-me">
-            <input type="checkbox" id="rememberMe" />
-            Remember me
-          </label>
-          <a href="#" class="forgot">Forgot Password?</a>
-        </div>
-
-        <button class="btn-create" id="loginBtn">SIGN IN</button>
-
-        <div class="divider"><span>or</span></div>
-
-        <button class="btn-google" id="btn-google">
-          <img
-            src="https://www.google.com/favicon.ico"
-            alt="Google"
-            width="20"
-          />
-          Continue with Google
-        </button>
-
-        <p class="signup-text">
-          New to STABLE? <a href="/page/sign_up.html">Create an account</a>
-        </p>
-        <a href="#" class="back-home" id="modal-close">← Back</a>
-      </div>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
     <script src="js/landpage.js"></script>
     <script>
       feather.replace();
     </script>
+    <script src="js/navbar.js"></script>
+    <script src="js/login-modal.js"></script>
   </body>
 </html>

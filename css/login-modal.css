@@ -1,0 +1,311 @@
+html.login-modal-open,
+body.login-modal-open {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  width: min(380px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow: hidden;
+  background: #0d1b2a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  padding: 22px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+  transform: translateY(0) scale(0.96);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal-logo {
+  background: #fff;
+  border-radius: 14px;
+  padding: 7px;
+  margin-bottom: 10px;
+}
+
+.modal-logo img {
+  width: 34px;
+  height: 34px;
+  display: block;
+  object-fit: contain;
+}
+
+.modal h2 {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 9px;
+  width: 100%;
+}
+
+.form-group label {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #1e2e3e;
+  border: 1.5px solid #2a3d52;
+  border-radius: 10px;
+  height: 42px;
+  padding: 9px 14px;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.12);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+.input-wrapper #togglePassword {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.input-wrapper #togglePassword:hover {
+  color: #ccd0cf;
+}
+
+.input-wrapper #togglePassword svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.5;
+}
+
+.form-extras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #8899aa;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+  accent-color: #4a90d9;
+  width: 14px;
+  height: 14px;
+}
+
+.forgot {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.btn-create {
+  width: 100%;
+  padding: 11px;
+  background: #e8edf2;
+  color: #0d1b2a;
+  border: none;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 2px;
+  transition:
+    background 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.btn-create:hover {
+  background: #fff;
+}
+
+.btn-create:disabled {
+  opacity: 0.68;
+  cursor: wait;
+}
+
+.divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+  color: #8899aa;
+  font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #2a3d52;
+}
+
+.btn-google {
+  width: 100%;
+  padding: 10px;
+  background: #1e2e3e;
+  border: 1.5px solid #2a3d52;
+  border-radius: 12px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.btn-google:hover {
+  border-color: #4a90d9;
+}
+
+.login-error {
+  width: 100%;
+  min-height: 18px;
+  color: #ff6b6b;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  text-align: center;
+  margin: 8px 0 0;
+}
+
+.login-error.success {
+  color: #a8db64;
+}
+
+.signup-text {
+  color: #8899aa;
+  font-size: 0.85rem;
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+.signup-text a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-home {
+  color: #8899aa;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-home:hover {
+  color: #fff;
+}
+
+@media (max-width: 520px) {
+  .modal {
+    width: min(360px, calc(100vw - 24px));
+    padding: 20px 18px;
+    border-radius: 18px;
+  }
+
+  .form-extras {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay,
+  .modal {
+    transition: none;
+  }
+}

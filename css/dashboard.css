@@ -140,6 +140,7 @@ a {
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  align-items: stretch;
 }
 
 .calendar-dates::-webkit-scrollbar {
@@ -158,6 +159,10 @@ a {
   transition: all 0.2s;
   border: 1px solid transparent;
   min-width: 52px;
+  appearance: none;
+  background: #1a2a38;
+  border: 1px solid #2a3d52;
+  color: #ccd0cf;
 }
 
 .cal-day:hover {
@@ -173,7 +178,15 @@ a {
   border-color: #4a90d9;
 }
 .cal-day.future {
-  opacity: 0.5;
+  opacity: 0.75;
+}
+
+.cal-day:not(.selected) .cal-day-name {
+  color: #9ba8ab;
+}
+
+.cal-day:not(.selected) .cal-day-num {
+  color: #ccd0cf;
 }
 
 .cal-day.has-activity::after {
@@ -529,8 +542,9 @@ a {
 /* ── FOOTER ── */
 .footer {
   background: #080f18;
-  border-top: 1px solid var(--border);
-  padding: 48px 0 0;
+  border-top: 1px solid #2a3d52;
+  padding: 40px 0;
+  color: #ffffff;
 }
 
 .footer-container {
@@ -559,62 +573,219 @@ a {
   font-size: 1rem;
   font-weight: 700;
   font-style: italic;
-  color: var(--white);
+  color: #ffffff;
 }
 
 .footer-tagline {
-  color: var(--muted);
+  color: #8899aa;
   font-size: 0.82rem;
   line-height: 1.6;
   margin-bottom: 12px;
 }
+
 .footer-copyright {
   color: #445566;
   font-size: 0.75rem;
 }
-
-.footer-links {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-.footer-column h4 {
-  font-family: "Lexend Giga", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 1px;
-  margin-bottom: 16px;
+.footer-right .social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.footer-column ul {
-  list-style: none;
+.footer-right .social a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #445566;
+  border-radius: 50%;
+  color: #8899aa;
+  font-size: 1rem;
+  opacity: 0.8;
+  transition: color 0.2s, border-color 0.2s;
 }
-.footer-column ul li {
-  margin-bottom: 10px;
+
+.footer-right .social a svg {
+  width: 20px;
+  height: 20px;
+  stroke: #8899aa;
+  transition: stroke 0.2s;
 }
-.footer-column ul li a {
-  color: var(--muted);
-  font-size: 0.82rem;
+
+.footer-right .social a:hover {
+  border-color: #8899aa;
+  opacity: 1;
+}
+
+.footer-right .social a:hover svg {
+  stroke: #ffffff;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+}
+
+.footer-nav a {
+  color: #8899aa;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
   transition: color 0.2s;
 }
-.footer-column ul li a:hover {
-  color: var(--white);
-}
 
-.footer-bottom {
-  border-top: 1px solid var(--border);
-  padding: 16px 40px;
-  text-align: center;
-  color: #445566;
-  font-size: 0.8rem;
+.footer-nav a:hover {
+  color: #ffffff;
 }
 
 .empty-text {
   color: #8899aa;
   font-size: 0.85rem;
 }
+
+.daily-challenge-body,
+.card--challenge .card-body {
+  padding: 20px 24px;
+}
+
+.daily-challenge-empty {
+  color: #8899aa;
+  font-size: 0.85rem;
+}
+
+.daily-challenge-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px 22px;
+  align-items: center;
+}
+
+.daily-challenge-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #4a90d9;
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.daily-challenge-card h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 0.95rem;
+}
+
+.daily-challenge-card p {
+  margin: 0;
+  color: #9ba8ab;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.daily-challenge-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.daily-challenge-meta span {
+  padding: 7px 11px;
+  border: 1px solid #2a3d52;
+  border-radius: 999px;
+  background: #1a2a38;
+  color: #ccd0cf;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.daily-challenge-btn {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #4a90d9;
+  color: #ffffff;
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.daily-challenge-btn:disabled {
+  background: #253745;
+  color: #9ba8ab;
+  cursor: not-allowed;
+}
+
+.timer-btn--reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  padding: 11px 18px;
+  border: 1px solid #2a3d52;
+  border-radius: 999px;
+  background: #1a2a38;
+  color: #ccd0cf;
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.timer-btn--reset:hover {
+  border-color: #4a90d9;
+  background: rgba(74, 144, 217, 0.12);
+  color: #ffffff;
+}
+
+.empty-exercise.rest-day {
+  min-height: 110px;
+  padding: 22px;
+  display: grid;
+  align-content: center;
+  gap: 9px;
+  border: 1px solid #2a3d52;
+  border-radius: 12px;
+  background:
+    linear-gradient(135deg, rgba(168, 219, 100, 0.08), transparent 62%),
+    #1a2a38;
+}
+
+.empty-exercise.rest-day strong {
+  color: #ffffff;
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 0.9rem;
+}
+
+.empty-exercise.rest-day span {
+  color: #9ba8ab;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {

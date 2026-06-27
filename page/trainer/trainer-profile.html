@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trainer Profile - STABLE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../css/navbar.css" />
+    <link rel="stylesheet" href="../../css/trainer/trainer-profile.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <nav class="navbar" id="mainNavbar">
+      <a href="#" class="navbar-logo" id="navbarLogo">
+        <img src="" alt="Logo STABLE" id="navbarLogoImage" />
+        <i>STABLE</i>
+      </a>
+
+      <div id="navbar-menu"></div>
+      <div class="nav-actions"></div>
+    </nav>
+
+    <main class="trainer-profile-page">
+      <section class="profile-hero">
+        <div class="avatar-shell">
+          <img
+            src="../../Img/defaultavatar.png"
+            alt="Foto trainer"
+            class="trainer-avatar"
+            id="trainerAvatar"
+          />
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Trainer Profile</p>
+          <h1 id="trainerName">Memuat data trainer...</h1>
+          <p id="trainerEmail">-</p>
+          <span class="status-pill" id="onlineStatus">Offline</span>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card">
+          <i data-feather="star"></i>
+          <div>
+            <span class="stat-label">Rating</span>
+            <strong id="ratingValue">0.0</strong>
+          </div>
+        </article>
+
+        <article class="stat-card">
+          <i data-feather="users"></i>
+          <div>
+            <span class="stat-label">Total Clients</span>
+            <strong id="clientsValue">0</strong>
+          </div>
+        </article>
+
+        <article class="stat-card">
+          <i data-feather="dollar-sign"></i>
+          <div>
+            <span class="stat-label">Harga Chat</span>
+            <strong id="priceValue">Rp 0</strong>
+          </div>
+        </article>
+      </section>
+
+      <section class="profile-form-card">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Public Trainer Data</p>
+            <h2>Data yang tampil di halaman trainer.</h2>
+          </div>
+          <button type="submit" form="trainerProfileForm" class="btn-save">
+            <i data-feather="save"></i>
+            Save Profile
+          </button>
+        </div>
+
+        <form id="trainerProfileForm" class="trainer-form">
+          <label class="form-field">
+            <span>Nama Trainer</span>
+            <input type="text" id="nameInput" placeholder="Contoh: Joshua Charis" />
+          </label>
+
+          <label class="form-field">
+            <span>Spesialisasi</span>
+            <input
+              type="text"
+              id="specialtyInput"
+              placeholder="Weight Loss, Muscle Gain, Beginner"
+            />
+          </label>
+
+          <label class="form-field">
+            <span>Pengalaman</span>
+            <input type="text" id="experienceInput" placeholder="Contoh: 3 tahun" />
+          </label>
+
+          <label class="form-field">
+            <span>Harga Chat 10 Menit</span>
+            <input type="number" id="priceInput" min="0" step="1000" />
+          </label>
+
+          <label class="form-field">
+            <span>Kategori</span>
+            <input
+              type="text"
+              id="categoriesInput"
+              placeholder="weight-loss,muscle-gain,beginner"
+            />
+          </label>
+
+          <label class="form-field">
+            <span>Tags</span>
+            <input
+              type="text"
+              id="tagsInput"
+              placeholder="Fat Loss, Hypertrophy, Form Check"
+            />
+          </label>
+
+          <label class="form-field form-field--wide">
+            <span>Bio</span>
+            <textarea
+              id="bioInput"
+              rows="5"
+              placeholder="Tuliskan ringkasan pendek tentang gaya coaching kamu."
+            ></textarea>
+          </label>
+
+          <label class="toggle-row">
+            <input type="checkbox" id="onlineInput" />
+            <span>Online dan menerima sesi chat</span>
+          </label>
+        </form>
+
+        <p class="form-message" id="formMessage"></p>
+      </section>
+    </main>
+
+    <script src="../../js/navbar.js?v=6"></script>
+    <script src="../../js/trainer/trainer-profile.js?v=4"></script>
+    <script>
+      window.addEventListener("load", () => feather.replace());
+    </script>
+  </body>
+</html>

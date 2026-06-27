@@ -6,27 +6,23 @@
     <title>Clients - STABLE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../../css/navbar.css" />
-    <link rel="stylesheet" href="../../css/trainer-dashboard.css" />
+    <link rel="stylesheet" href="../../css//trainer/trainer-clients.css" />
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
+    <nav class="navbar" id="mainNavbar">
+      <a href="#" class="navbar-logo" id="navbarLogo">
+        <img src="" alt="Logo STABLE" id="navbarLogoImage" />
+        <i>STABLE</i>
+      </a>
 
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../Img/logo.png" alt="Logo" class="logo-img" />
-        <span class="logo-text">STABLE</span>
-      </div>
-      <div class="nav-links">
-        <a href="dashboard.html" class="nav-link">Home</a>
-        <a href="trainer-clients.html" class="nav-link active">Clients</a>
-        <a href="trainer-profile.html" class="nav-link">Profile</a>
-      </div>
-      <div class="nav-actions">
-        <span class="trainer-badge">TRAINER</span>
-        <span class="user-greeting" id="userGreeting">Coach</span>
-      </div>
+      <div id="navbar-menu"></div>
+      <div class="nav-actions"></div>
     </nav>
 
     <section class="hero">
@@ -82,7 +78,10 @@
       </div>
     </div>
 
-    <script src="../../js/trainer-clients.js"></script>
-    <script>window.addEventListener("load", () => feather.replace());</script>
+    <script src="../../js/trainer/trainer-clients.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script>
+      window.addEventListener("load", () => feather.replace());
+    </script>
   </body>
 </html>

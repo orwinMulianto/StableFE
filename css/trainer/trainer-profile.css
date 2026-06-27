@@ -1,0 +1,366 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --page-bg: #06141b;
+  --surface: #11212d;
+  --surface-soft: #172837;
+  --border: #253745;
+  --text: #ffffff;
+  --muted: #9ba8ab;
+  --soft: #ccd0cf;
+  --accent: #4a90d9;
+  --accent-strong: #27aef3;
+  --success: #7bc96f;
+  --danger: #ff6b6b;
+}
+
+html {
+  background: var(--page-bg);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+.trainer-profile-page {
+  width: min(1340px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 118px 0 56px;
+}
+
+.profile-hero,
+.profile-form-card,
+.stat-card {
+  background: rgba(17, 33, 45, 0.96);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.profile-hero {
+  min-height: 240px;
+  padding: 44px;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.avatar-shell {
+  width: 136px;
+  height: 136px;
+  flex: 0 0 136px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--accent), var(--soft));
+}
+
+.trainer-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+  background: #0b1015;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent-strong);
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.hero-copy h1 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-family: "Lexend Giga", sans-serif;
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.hero-copy p {
+  margin: 0 0 18px;
+  color: var(--soft);
+  font-size: 1.05rem;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.status-pill.is-online {
+  border-color: rgba(123, 201, 111, 0.45);
+  color: var(--success);
+  background: rgba(123, 201, 111, 0.08);
+}
+
+.stats-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.stat-card {
+  min-height: 118px;
+  padding: 26px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.stat-card svg {
+  width: 32px;
+  height: 32px;
+  color: var(--accent);
+  stroke-width: 1.8;
+}
+
+.stat-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #9db4d4;
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.stat-card strong {
+  color: var(--text);
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 1.45rem;
+  letter-spacing: 0;
+}
+
+.profile-form-card {
+  margin-top: 28px;
+  padding: 34px;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: var(--text);
+  font-family: "Lexend Giga", sans-serif;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.25;
+}
+
+.btn-save {
+  min-height: 46px;
+  padding: 0 20px;
+  border: 1px solid rgba(74, 144, 217, 0.7);
+  border-radius: 8px;
+  background: rgba(74, 144, 217, 0.16);
+  color: var(--accent);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.btn-save:hover {
+  background: rgba(74, 144, 217, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-save:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+.btn-save svg {
+  width: 18px;
+  height: 18px;
+}
+
+.trainer-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.form-field {
+  min-height: 104px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-field--wide,
+.toggle-row {
+  grid-column: 1 / -1;
+}
+
+.form-field span,
+.toggle-row span {
+  color: #9db4d4;
+  font-family: "Lexend Giga", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(204, 208, 207, 0.48);
+}
+
+.toggle-row {
+  min-height: 58px;
+  padding: 0 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.toggle-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+.form-message {
+  min-height: 22px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.form-message.is-error {
+  color: var(--danger);
+}
+
+.form-message.is-success {
+  color: var(--success);
+}
+
+.avatar-shell {
+  position: relative;
+  width: fit-content;
+}
+
+.btn-edit-avatar {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #2f8fff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.btn-edit-avatar:hover {
+  background: #1f7eea;
+}
+
+.btn-edit-avatar svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 900px) {
+  .trainer-profile-page {
+    width: min(100% - 28px, 720px);
+    padding-top: 104px;
+  }
+
+  .profile-hero {
+    padding: 28px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stats-grid,
+  .trainer-form {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header {
+    flex-direction: column;
+  }
+
+  .btn-save {
+    width: 100%;
+  }
+}

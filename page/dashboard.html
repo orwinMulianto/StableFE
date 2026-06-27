@@ -15,22 +15,14 @@
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../Img/logo.png" alt="Logo" class="logo-img" />
-        <span class="logo-text">STABLE</span>
-      </div>
-      <div class="nav-links">
-        <a href="dashboard.html" class="nav-link">Home</a>
-        <a href="workout.html" class="nav-link">Workout</a>
-        <a href="trainer.html" class="nav-link">Trainer</a>
-        <a href="profile.html" class="nav-link">Profile</a>
-      </div>
-      <div class="nav-actions">
-        <div class="nav-actions">
-          <span class="user-greeting" id="userGreeting">Guest</span>
-        </div>
-      </div>
+    <nav class="navbar" id="mainNavbar">
+      <a href="#" class="navbar-logo" id="navbarLogo">
+        <img src="" alt="Logo STABLE" id="navbarLogoImage" />
+        <i>STABLE</i>
+      </a>
+
+      <div id="navbar-menu"></div>
+      <div class="nav-actions"></div>
     </nav>
 
     <section class="hero">
@@ -108,61 +100,16 @@
           <h3 class="section-title">Tantangan Harian</h3>
         </div>
         <div class="card-body">
-          <div class="challenge-list" id="dailyChallenge">
-            <p class="empty-text">Belum ada tantangan hari ini.</p>
+          <div class="card-body daily-challenge-body" id="dailyChallengeBody">
+            <p class="daily-challenge-empty">Memuat tantangan harian...</p>
           </div>
         </div>
       </div>
     </main>
 
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="../Img/logo.png" alt="Logo" class="footer-logo-img" />
-            <span class="footer-logo-text">STABLE</span>
-          </div>
-          <p class="footer-tagline">
-            System for Tracking And Behavioral Lifestyle Enhancement
-          </p>
-          <p class="footer-copyright">© 2025 STABLE. All rights reserved.</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-column">
-            <h4>Features</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="workout.html">Workout Plans</a></li>
-              <li><a href="trainer.html">Personal Trainer</a></li>
-              <li><a href="profile.html">Profile</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Support</h4>
-            <ul>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Connect</h4>
-            <ul>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">YouTube</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>Stay consistent, stay strong</p>
-      </div>
-    </footer>
 
-    <script src="../js/home.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/navbar.js"></script>
     <script>
       window.addEventListener("load", () => feather.replace());
     </script>
